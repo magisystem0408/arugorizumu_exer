@@ -1,7 +1,9 @@
-def func5(numbers):
-    for i in range(len(numbers)):
-        for j in range(len(numbers)):
-            print(numbers[i], numbers[j])
+def primeNumber(num):
+    for i in range(1, num):
+        if num % i == 0:
+            return i
 
+if __name__ == '__main__':
+    input = int(input())
 
-func5([1,2,3,4,5])
+    print(primeNumber(input))
