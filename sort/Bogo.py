@@ -1,6 +1,6 @@
-import random
 
 from typing import List
+import secrets
 
 
 # シャッフルした後順序通りに並んでいるか確認する
@@ -21,9 +21,9 @@ def in_order(numbers:List[int]) ->bool:
 
 def bogo_sort(numbers:List[int])->List[int]:
     while not in_order(numbers):
-        random.shuffle(numbers)
+        secrets.SystemRandom().shuffle(numbers)
     print(numbers)
 
 
 if __name__ == '__main__':
-    num = [random.randint(0, 100) for _ in range(10)]
+    num = [secrets.SystemRandom().randint(0, 100) for _ in range(10)]
