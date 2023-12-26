@@ -20,8 +20,7 @@ def generate_primes_v2(number: int) -> List[int]:
     primes = []
     cache = {}
     for x in range(2, number + 1):
-        is_prime = cache.get(x)
-        if is_prime is False:
+        if (is_prime := cache.get(x)) is False:
             continue
         primes.append(x)
         cache[x] = True
@@ -33,8 +32,7 @@ def generate_primes_v2(number: int) -> List[int]:
 def generate_primes_v3(number: int) -> Generator[int, None, None]:
     cache = {}
     for x in range(2, number + 1):
-        is_prime = cache.get(x)
-        if is_prime is False:
+        if (is_prime := cache.get(x)) is False:
             continue
         yield x
         cache[x] = True
